@@ -1,4 +1,4 @@
-export default function TransactionHistory({data}) {
+export default function TransactionHistory({ data }) {
   return (
     <>
       <table>
@@ -9,15 +9,15 @@ export default function TransactionHistory({data}) {
             <th>Currency</th>
           </tr>
         </thead>
-        {data.map(({ id, type, amount, currency }) => (
-          <tbody key={id}>
+        <tbody>
+          {data.map(({ id, type, amount, currency }) => (
             <tr key={id}>
               <td>{type}</td>
               <td>{amount}</td>
               <td>{currency}</td>
             </tr>
-          </tbody>
-        ))}
+          ))}
+        </tbody>
       </table>
     </>
   );
