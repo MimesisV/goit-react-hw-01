@@ -1,14 +1,15 @@
-import css from "./FriendList.module.css";
-import clsx from "clsx";
+import FriendListItem from './FriendListItem'
 
-export default function FriendList({data: {avatar, name, isOnline}}) {
+export default function FriendList({ data }) {
   return (
     <>
-      <div>
-        <img src={avatar} alt="User avatar" width="48" />
-        <p>{name}</p>
-        <p className={clsx(css.text, isOnline ? css.isOnline : css.isOffline)}>{isOnline ? "Online" : "Ofline"}</p>
-      </div>
+      <ul>
+        {data.map((element) => (
+          <li key={element.id}>
+            <FriendListItem data={element}/>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

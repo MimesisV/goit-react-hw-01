@@ -8,17 +8,9 @@ import transactions from '../transactions.json';
 export default function App() {
   return (
     <>
-      {userData.map((user, id) => (
-        <Profile key={id} data={user} />
-      ))}
-      <ul>
-        {friends.map(friend => (
-          <li key={friend.id}>
-            <FriendList data={friend} />
-          </li>
-        ))}
-      </ul>
-      <TransactionHistory data={transactions}/>
+      <Profile data={userData} />
+      <FriendList data={friends} />
+      <TransactionHistory data={transactions} />
     </>
   );
 }
